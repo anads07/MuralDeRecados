@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+@font-face {
+    font-family: 'TAN Headline';
+    src: url('src/TANHEADLINE-Regular.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('src/quadro.png');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+.header-mural {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+    padding-top: 20px;    
+    margin-bottom: 20px;
+}
+
+.titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+.alfinete-esquerda {
+    margin-right: 10px;
+    transform: scaleX(-1); 
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+
+.titulo-mural {
+    font-family: 'TAN Headline', serif; 
+    color: white;
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.alfinete-direita {
+    margin-left: 10px; 
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+
+.alfinete-titulo {
+    height: 80px; 
+}
+
+.botoes-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#btn-adicionar {
+    padding: 10px 15px;
+    font-family: 'TAN Headline', serif; 
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.348);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+#btn-ordenar {
+    padding: 10px 15px;
+    font-family: 'TAN Headline', serif; 
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.348);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    position: static; 
+    top: auto;
+    right: auto;
+    transition: background-color 0.2s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#btn-adicionar, #btn-ordenar {
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+#btn-adicionar:hover, #btn-ordenar:hover {
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+#mural-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 50px;
+}
+
+.post-it-card {
+    font-family: 'Indie Flower', cursive; 
+    width: 250px; 
+    min-height: 250px; 
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 50px; 
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.post-it-card:hover {
+    filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.5));
+    transform: translateY(-5px) scale(1.02) rotate(0deg) !important;
+}
+
+.post-it-card h3 {
+    font-family: 'TAN Headline', serif; 
+    margin-top: 0;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.post-it-card p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.post-it-card .recado {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.post-it-card .recado:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.data-card {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px;
+    font-family: 'Indie Flower', cursive; 
+    font-size: 17px;
+    font-weight: bold;
+    color: #666;
+}
+
+#modal-adicionar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-oculto {
+    display: none !important;
+}
+
+.modal-content {
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    font-family: 'Indie Flower', cursive;
+    animation-fill-mode: forwards;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal-abrir {
+    animation: modalFadeZoomIn 0.3s ease forwards;
+  }
+
+.modal-content h2 {
+    font-family: 'TAN Headline', serif;
+    text-align: center;
+    margin-top: 0;
+    color: #4a4a4a;
+}
+
+#form-recado label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#form-recado input,
+#form-recado textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#form-recado textarea {
+    height: 100px;
+    resize: none; 
+}
+
+#form-recado button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    font-family: 'TAN Headline', serif;
+    cursor: pointer;
+}
+
+body.desfocado > *:not(#modal-adicionar) {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+@keyframes modalFadeZoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }  
+
+@media (max-width: 768px) {
+    .header-mural {
+        padding-top: 15px; 
+    }
+
+    .titulo-container {
+        flex-direction: column; 
+    }
+    
+    .titulo-mural {
+        font-size: 2em; 
+    }
+
+    .alfinete-titulo {
+        height: 20px; 
+        margin: 5px 0; 
+    }
+
+    #btn-ordenar {
+        margin-top: 10px;
+        padding: 8px 12px; 
+        font-size: 14px;
+    }
+
+
+    #mural-container {
+        flex-direction: column; 
+        align-items: center;    
+        padding: 15px;
+        gap: 15px; 
+    }
+
+    .post-it-card {
+        width: 90%;
+        min-height: auto; 
+        padding: 20px;
+    }
+    
+    .post-it-card h3 {
+        padding-top: 15px; 
+        font-size: 1.2em; 
+    }
+
+    .post-it-card p {
+        font-size: 1em; 
+    }
+
+    .data-card {
+        bottom: 5px; 
+        right: 5px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-mural {
+        padding-top: 10px;
+    }
+    .titulo-mural {
+        font-size: 1.5em; 
+    }
+    .alfinete-titulo {
+        height: 15px;
+    }
+}

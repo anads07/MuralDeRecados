@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de Recados</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header class="header-mural">
+        <div class="titulo-container">
+            <img src="src/alfinete.png" alt="Alfinete Esquerda" class="alfinete-titulo alfinete-esquerda">
+            <h1 class="titulo-mural">MURAL DE RECADOS</h1>
+            <img src="src/alfinete.png" alt="Alfinete Direita" class="alfinete-titulo alfinete-direita">
+        </div>
+        <div class="botoes-container">
+            <button id="btn-ordenar">Ordenar Autores</button>
+            <button id="btn-adicionar">Adicionar Recado</button>
+        </div>
+    </header>
+    
+    <div id="modal-adicionar" class="modal-oculto">
+        <div class="modal-content">
+            <span class="fechar-modal">&times;</span>
+            <h2>Novo Recado</h2>
+            <form id="form-recado">
+                <label for="autor">Seu nome:</label>
+                <input type="text" id="autor" name="autor" required>
+    
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+    
+                <button type="submit">Adicionar ao Mural</button>
+            </form>
+        </div>
+    </div>
+
+    <main id="mural-container"></main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+
